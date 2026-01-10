@@ -157,85 +157,198 @@ function App() {
         </div>
       </section>
 
-      {/* Products Section */}
-      <section id="products" className="py-24 px-4 bg-white relative overflow-hidden scroll-mt-28" style={{backgroundImage: 'url(/media/page.jpg)', backgroundSize: 'cover', backgroundPosition: 'center'}}>
-        <div className="absolute inset-0 bg-black/50"></div>
-        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-blue-500/5 rounded-full blur-[100px] pointer-events-none"></div>
-        <div className="container mx-auto max-w-6xl relative z-10 px-4">
-           <div className="text-center mb-16 px-4">
-              <span className="text-blue-400 font-bold tracking-widest text-[10px] uppercase mb-3 block">Our Products</span>
-              <h2 className="text-3xl md:text-5xl font-black text-white tracking-tight mb-4 leading-tight">3 kW On-Grid Solar System</h2>
-              <p className="text-lg md:text-xl text-slate-300 max-w-2xl mx-auto">Complete end-to-end installation with premium, MNRE-approved components, designed for residential homes in the Saharanpur region.</p>
+      {/* Products Section - Enhanced Liquid Glass */}
+      <section id="products" className="py-32 px-4 bg-[#050505] relative overflow-hidden scroll-mt-28">
+        {/* Video Background */}
+        <video
+          className="absolute inset-0 w-full h-full object-cover opacity-50"
+          autoPlay
+          loop
+          muted
+          playsInline
+        >
+          <source src="/media/Untitled%20design%20(1).mp4" type="video/mp4" />
+        </video>
+        {/* Dark overlay for readability */}
+        <div className="absolute inset-0 bg-black/40"></div>
+        
+        <div className="container mx-auto max-w-6xl relative z-10">
+           
+           {/* Section Header */}
+           <div className="text-center mb-20">
+              <p className="text-orange-400 font-medium text-sm tracking-wide uppercase mb-4">Complete Solar Package</p>
+              <h2 className="text-4xl md:text-6xl font-semibold text-white tracking-tight mb-6 drop-shadow-[0_2px_20px_rgba(0,0,0,0.5)]">3 kW On-Grid System</h2>
+              <p className="text-lg text-white/60 max-w-2xl mx-auto leading-relaxed drop-shadow-lg">Premium MNRE-approved components with end-to-end installation for homes in Saharanpur.</p>
            </div>
-           <div className="grid lg:grid-cols-3 gap-6">
-              <div className="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-6 grid-auto-rows-1fr">
-                 <div className="bg-blue-50/20 p-6 rounded-[2rem] border border-blue-100/50 group backdrop-blur-sm hover:translate-y-[-4px] hover:shadow-xl transition-all duration-300">
-                    <div className="w-10 h-10 bg-white rounded-xl flex items-center justify-center text-blue-400 shadow-sm mb-4 group-hover:scale-110 transition-transform">
-                       <Wrench size={20} />
-                    </div>
-                    <h4 className="font-bold text-white mb-1">Local Installation</h4>
-                    <p className="text-sm text-slate-300 leading-relaxed">Dedicated on-ground installation teams based near Talheri Buzurg, ensuring faster site surveys, timely installation, and reliable after-sales support.</p>
-                 </div>
-                 <div className="bg-orange-50/20 p-6 rounded-[2rem] border border-orange-100/50 group backdrop-blur-sm hover:translate-y-[-4px] hover:shadow-xl transition-all duration-300">
-                    <div className="w-10 h-10 bg-white rounded-xl flex items-center justify-center text-orange-400 shadow-sm mb-4 group-hover:scale-110 transition-transform">
-                       <Sun size={20} />
-                    </div>
-                    <h4 className="font-bold text-white mb-1">Adani Solar Module Kit</h4>
-                    <p className="text-sm text-slate-300 leading-relaxed">High-efficiency mono-PERC solar panels manufactured by Adani Solar, designed for Indian weather conditions with strong performance in high temperatures and dusty environments.</p>
-                 </div>
-                 <div className="bg-green-50/20 p-6 rounded-[2rem] border border-green-100/50 group backdrop-blur-sm hover:translate-y-[-4px] hover:shadow-xl transition-all duration-300">
-                    <div className="w-10 h-10 bg-white rounded-xl flex items-center justify-center text-green-400 shadow-sm mb-4 group-hover:scale-110 transition-transform">
-                       <ShieldCheck size={20} />
-                    </div>
-                    <h4 className="font-bold text-white mb-1">25-Year Performance Warranty</h4>
-                    <p className="text-sm text-slate-300 leading-relaxed">Manufacturer-backed panel performance warranty ensuring long-term output stability and peace of mind for homeowners.</p>
-                 </div>
-                 <div className="bg-yellow-50/20 p-6 rounded-[2rem] border border-yellow-100/50 group backdrop-blur-sm hover:translate-y-[-4px] hover:shadow-xl transition-all duration-300">
-                    <div className="w-10 h-10 bg-white rounded-xl flex items-center justify-center text-yellow-400 shadow-sm mb-4 group-hover:scale-110 transition-transform">
-                       <Plug size={20} />
-                    </div>
-                    <h4 className="font-bold text-white mb-1">Premium Cabling</h4>
-                    <p className="text-sm text-slate-300 leading-relaxed">ISI-certified Havells DC & AC cables used for rooftop and inverter connections, ensuring high insulation resistance, reduced power loss, and electrical safety.</p>
-                 </div>
-                 <div className="bg-red-50/20 p-6 rounded-[2rem] border border-red-100/50 group backdrop-blur-sm hover:translate-y-[-4px] hover:shadow-xl transition-all duration-300">
-                    <div className="w-10 h-10 bg-white rounded-xl flex items-center justify-center text-red-400 shadow-sm mb-4 group-hover:scale-110 transition-transform">
-                       <Zap size={20} />
-                    </div>
-                    <h4 className="font-bold text-white mb-1">Copper Earthing System</h4>
-                    <p className="text-sm text-slate-300 leading-relaxed">Heavy-gauge copper earthing with proper grounding pits to protect the system against electrical faults, lightning, and voltage fluctuations.</p>
-                 </div>
-                 <div className="bg-slate-50/20 p-6 rounded-[2rem] border border-slate-100/50 group backdrop-blur-sm hover:translate-y-[-4px] hover:shadow-xl transition-all duration-300">
-                    <div className="w-10 h-10 bg-white rounded-xl flex items-center justify-center text-slate-400 shadow-sm mb-4 group-hover:scale-110 transition-transform">
-                       <Layers size={20} />
-                    </div>
-                    <h4 className="font-bold text-white mb-1">Robust Mounting Structure</h4>
-                    <p className="text-sm text-slate-300 leading-relaxed">Hot-dip galvanized or galvalume mounting structure engineered to withstand strong winds, corrosion, and long-term outdoor exposure.</p>
-                 </div>
-                 <div className="bg-purple-50/20 p-6 rounded-[2rem] border border-purple-100/50 group backdrop-blur-sm hover:translate-y-[-4px] hover:shadow-xl transition-all duration-300">
-                    <div className="w-10 h-10 bg-white rounded-xl flex items-center justify-center text-purple-400 shadow-sm mb-4 group-hover:scale-110 transition-transform">
-                       <Zap size={20} />
-                    </div>
-                    <h4 className="font-bold text-white mb-1">On-Grid Net Metering Support</h4>
-                    <p className="text-sm text-slate-300 leading-relaxed">Complete assistance with DISCOM coordination, net-meter installation, and documentation as per Uttar Pradesh electricity regulations.</p>
-                 </div>
-              </div>
-              <div className="lg:col-span-1 lg:sticky lg:top-0 order-first lg:order-last">
-                 <div className="bg-[#1c1c1e] rounded-[2rem] shadow-xl p-8 text-white relative overflow-hidden hover:translate-y-[-4px] hover:shadow-2xl transition-all duration-300">
-                    <div className="relative z-10">
-                       <div className="mb-8">
-                          <span className="block text-blue-200 text-[10px] font-bold uppercase tracking-wider mb-2">Price (After Government Subsidy)</span>
-                          <div className="flex items-baseline gap-2">
-                             <span className="text-5xl font-black tracking-tight">₹1,12,000</span>
-                             <span className="text-xl font-medium opacity-80">/-</span>
-                          </div>
-                          <p className="text-xs text-slate-400 mt-2">(Indicative price for standard residential installation. Final cost may vary based on site conditions, roof type, and DISCOM norms.)</p>
+
+           {/* Pricing Hero Card - Clean Glass */}
+           <div className="relative mb-16">
+              {/* Main glass card */}
+              <div className="relative bg-white/[0.03] backdrop-blur-3xl border border-white/[0.08] rounded-[2rem] p-10 md:p-14 overflow-hidden shadow-[inset_0_1px_1px_rgba(255,255,255,0.1),inset_0_-1px_1px_rgba(255,255,255,0.05)]">
+                 {/* Top edge highlight */}
+                 <div className="absolute top-0 left-8 right-8 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
+                 
+                 <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-10 relative z-10">
+                    <div className="flex-1">
+                       <p className="text-white/40 text-sm font-medium uppercase tracking-widest mb-3">After Government Subsidy</p>
+                       <div className="flex items-baseline gap-2 mb-4">
+                          <span className="text-5xl md:text-7xl font-semibold text-white tracking-tight drop-shadow-[0_0_30px_rgba(255,255,255,0.15)]">₹1,12,000</span>
                        </div>
-                       <button onClick={openBookingModal} className="w-full bg-white text-blue-600 font-bold py-5 rounded-2xl hover:bg-blue-50 transition-all flex items-center justify-center gap-2">
+                       <p className="text-white/40 text-sm max-w-md leading-relaxed">Indicative price for standard residential installation. Final cost varies based on site conditions and roof type.</p>
+                    </div>
+                    <div className="flex flex-col sm:flex-row gap-4">
+                       <button onClick={openBookingModal} className="bg-white text-black font-medium px-8 py-4 rounded-full hover:bg-white/90 transition-all flex items-center justify-center gap-2 shadow-[0_4px_20px_rgba(255,255,255,0.25)]">
                           Book Now <ArrowRight size={18} />
+                       </button>
+                       <button onClick={() => scrollToSection('calculator')} className="bg-white/[0.03] backdrop-blur-3xl border border-white/[0.08] text-white font-medium px-8 py-4 rounded-full hover:bg-white/[0.08] hover:border-white/[0.15] transition-all shadow-[inset_0_1px_0_rgba(255,255,255,0.08)]">
+                          Calculate Savings
                        </button>
                     </div>
                  </div>
               </div>
+           </div>
+
+           {/* Features Grid - Enhanced Liquid Glass Cards */}
+           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+              
+              {/* Feature 1 - Local Installation with Image */}
+              <div className="relative">
+                 <div className="relative rounded-2xl border border-white/[0.06] hover:border-white/[0.12] transition-all h-full overflow-hidden shadow-[inset_0_1px_1px_rgba(255,255,255,0.08)]">
+                    {/* Background Image */}
+                    <img 
+                       src="/media/local-installation.png" 
+                       alt="Local Installation" 
+                       className="absolute inset-0 w-full h-full object-cover"
+                    />
+                    {/* Dark overlay for text readability */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20"></div>
+                    {/* Content */}
+                    <div className="relative z-10 p-6 h-full flex flex-col justify-end min-h-[180px]">
+                       <div className="w-10 h-10 bg-white/10 backdrop-blur-xl rounded-lg flex items-center justify-center mb-3 border border-white/20">
+                          <Wrench size={18} className="text-white" />
+                       </div>
+                       <h4 className="font-medium text-white text-base mb-1">Local Installation</h4>
+                       <p className="text-sm text-white/70 leading-relaxed">On-ground teams near Talheri Buzurg for faster surveys and reliable support.</p>
+                    </div>
+                 </div>
+              </div>
+
+              {/* Feature 2 - Adani Solar Panels with Image */}
+              <div className="relative">
+                 <div className="relative rounded-2xl border border-white/[0.06] hover:border-white/[0.12] transition-all h-full overflow-hidden shadow-[inset_0_1px_1px_rgba(255,255,255,0.08)]">
+                    {/* Background Image */}
+                    <img 
+                       src="/media/kokok.png" 
+                       alt="Adani Solar Panels" 
+                       className="absolute inset-0 w-full h-full object-cover"
+                    />
+                    {/* Dark overlay for text readability */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20"></div>
+                    {/* Content */}
+                    <div className="relative z-10 p-6 h-full flex flex-col justify-end min-h-[180px]">
+                       <div className="w-10 h-10 bg-white/10 backdrop-blur-xl rounded-lg flex items-center justify-center mb-3 border border-white/20">
+                          <Sun size={18} className="text-white" />
+                       </div>
+                       <h4 className="font-medium text-white text-base mb-1">Adani Solar Panels</h4>
+                       <p className="text-sm text-white/70 leading-relaxed">High-efficiency mono-PERC panels designed for Indian weather conditions.</p>
+                    </div>
+                 </div>
+              </div>
+
+              {/* Feature 3 - 25-Year Warranty with Image */}
+              <div className="relative">
+                 <div className="relative rounded-2xl border border-white/[0.06] hover:border-white/[0.12] transition-all h-full overflow-hidden shadow-[inset_0_1px_1px_rgba(255,255,255,0.08)]">
+                    {/* Background Image */}
+                    <img 
+                       src="/media/jijij.png" 
+                       alt="25-Year Warranty" 
+                       className="absolute inset-0 w-full h-full object-cover"
+                    />
+                    {/* Dark overlay for text readability */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20"></div>
+                    {/* Content */}
+                    <div className="relative z-10 p-6 h-full flex flex-col justify-end min-h-[180px]">
+                       <div className="w-10 h-10 bg-white/10 backdrop-blur-xl rounded-lg flex items-center justify-center mb-3 border border-white/20">
+                          <ShieldCheck size={18} className="text-white" />
+                       </div>
+                       <h4 className="font-medium text-white text-base mb-1">25-Year Warranty</h4>
+                       <p className="text-sm text-white/70 leading-relaxed">Manufacturer-backed performance warranty for long-term peace of mind.</p>
+                    </div>
+                 </div>
+              </div>
+
+              {/* Feature 4 - Premium Cabling with Image */}
+              <div className="relative">
+                 <div className="relative rounded-2xl border border-white/[0.06] hover:border-white/[0.12] transition-all h-full overflow-hidden shadow-[inset_0_1px_1px_rgba(255,255,255,0.08)]">
+                    {/* Background Image */}
+                    <img 
+                       src="/media/hfuhgu.png" 
+                       alt="Premium Cabling" 
+                       className="absolute inset-0 w-full h-full object-cover"
+                    />
+                    {/* Dark overlay for text readability */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20"></div>
+                    {/* Content */}
+                    <div className="relative z-10 p-6 h-full flex flex-col justify-end min-h-[180px]">
+                       <div className="w-10 h-10 bg-white/10 backdrop-blur-xl rounded-lg flex items-center justify-center mb-3 border border-white/20">
+                          <Plug size={18} className="text-white" />
+                       </div>
+                       <h4 className="font-medium text-white text-base mb-1">Premium Cabling</h4>
+                       <p className="text-sm text-white/70 leading-relaxed">ISI-certified Havells cables ensuring safety and reduced power loss.</p>
+                    </div>
+                 </div>
+              </div>
+
+              {/* Feature 5 - Copper Earthing with Image */}
+              <div className="relative">
+                 <div className="relative rounded-2xl border border-white/[0.06] hover:border-white/[0.12] transition-all h-full overflow-hidden shadow-[inset_0_1px_1px_rgba(255,255,255,0.08)]">
+                    {/* Background Image */}
+                    <img 
+                       src="/media/fjdhjfh.png" 
+                       alt="Copper Earthing" 
+                       className="absolute inset-0 w-full h-full object-cover"
+                    />
+                    {/* Dark overlay for text readability */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20"></div>
+                    {/* Content */}
+                    <div className="relative z-10 p-6 h-full flex flex-col justify-end min-h-[180px]">
+                       <div className="w-10 h-10 bg-white/10 backdrop-blur-xl rounded-lg flex items-center justify-center mb-3 border border-white/20">
+                          <Zap size={18} className="text-white" />
+                       </div>
+                       <h4 className="font-medium text-white text-base mb-1">Copper Earthing</h4>
+                       <p className="text-sm text-white/70 leading-relaxed">Heavy-gauge earthing protecting against faults and lightning.</p>
+                    </div>
+                 </div>
+              </div>
+
+              {/* Feature 6 */}
+              <div className="relative">
+                 <div className="relative bg-white/[0.02] backdrop-blur-3xl rounded-2xl p-6 border border-white/[0.06] hover:border-white/[0.12] hover:bg-white/[0.04] transition-all h-full overflow-hidden shadow-[inset_0_1px_1px_rgba(255,255,255,0.08)]">
+                    <div className="absolute top-0 left-4 right-4 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
+                    <div className="w-12 h-12 bg-gradient-to-br from-slate-400/30 to-slate-500/10 backdrop-blur-xl rounded-xl flex items-center justify-center mb-4 border border-slate-400/20 shadow-[inset_0_1px_0_rgba(255,255,255,0.1)]">
+                       <Layers size={22} className="text-slate-300" />
+                    </div>
+                    <h4 className="font-medium text-white text-base mb-2">Mounting Structure</h4>
+                    <p className="text-sm text-white/40 leading-relaxed">Hot-dip galvanized structure for wind and corrosion resistance.</p>
+                 </div>
+              </div>
+
+              {/* Feature 7 - Net Metering (Spans 2 columns) */}
+              <div className="relative md:col-span-2">
+                 <div className="relative bg-white/[0.02] backdrop-blur-3xl rounded-2xl p-6 border border-white/[0.06] hover:border-white/[0.12] hover:bg-white/[0.04] transition-all h-full overflow-hidden shadow-[inset_0_1px_1px_rgba(255,255,255,0.08)]">
+                    <div className="absolute top-0 left-4 right-4 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
+                    <div className="flex items-start gap-4">
+                       <div className="w-12 h-12 bg-gradient-to-br from-purple-500/30 to-purple-600/10 backdrop-blur-xl rounded-xl flex items-center justify-center shrink-0 border border-purple-400/20 shadow-[inset_0_1px_0_rgba(255,255,255,0.1)]">
+                          <FileCheck size={22} className="text-purple-400" />
+                       </div>
+                       <div>
+                          <h4 className="font-medium text-white text-base mb-2">On-Grid Net Metering Support</h4>
+                          <p className="text-sm text-white/40 leading-relaxed">Complete DISCOM coordination, net-meter installation, and documentation as per UP electricity regulations.</p>
+                       </div>
+                    </div>
+                 </div>
+              </div>
+
            </div>
         </div>
      </section>
@@ -264,22 +377,28 @@ function App() {
                     </p>
               </div>
             </div>
-            <div className="bg-black text-white p-8 md:p-10 rounded-[2.5rem] shadow-xl flex flex-col h-[350px] md:h-[400px] relative overflow-hidden">
-               <div className="relative z-10">
-                 <div className="w-12 h-12 bg-white/10 text-white rounded-2xl flex items-center justify-center mb-6 backdrop-blur-md">
-                    <ShieldCheck size={24} />
+            <div className="relative h-[350px] md:h-[400px] rounded-[2.5rem] overflow-hidden group" style={{backgroundImage: 'url(/media/kkk.jpg)', backgroundSize: 'cover', backgroundPosition: 'center'}}>
+               {/* Full transparent glass overlay */}
+               <div className="absolute inset-0 bg-white/[0.05] backdrop-blur-2xl"></div>
+               <div className="absolute inset-0 border border-white/[0.15] rounded-[2.5rem] shadow-[inset_0_1px_0_rgba(255,255,255,0.1),inset_0_-1px_0_rgba(0,0,0,0.1)]"></div>
+               
+               {/* Content */}
+               <div className="relative z-10 p-8 md:p-12 h-full flex flex-col">
+                 <div className="w-14 h-14 bg-white/[0.1] backdrop-blur-xl text-white rounded-2xl flex items-center justify-center mb-6 border border-white/[0.2] shadow-[inset_0_1px_0_rgba(255,255,255,0.15)]">
+                    <ShieldCheck size={26} className="text-green-400" />
                  </div>
-                 <h3 className="text-2xl md:text-3xl font-black mb-2 tracking-tight leading-tight">Govt Approved.</h3>
-                 <p className="text-gray-400 font-medium">
+                 <h3 className="text-2xl md:text-3xl font-semibold text-white mb-3 tracking-tight leading-tight drop-shadow-lg">Govt Approved.</h3>
+                 <p className="text-white/80 font-medium leading-relaxed max-w-xs drop-shadow-md">
                    Fully compliant with PM Surya Ghar Yojana standards for all Talheri Buzurg and Saharanpur installs.
                  </p>
-               </div>
-               <div className="mt-auto pt-8">
-                 <div className="flex items-center gap-3">
-                   <div className="h-1 flex-1 bg-white/20 rounded-full overflow-hidden">
-                     <div className="h-full w-[80%] bg-green-500 rounded-full"></div>
+                 
+                 <div className="mt-auto pt-8">
+                   <div className="flex items-center gap-4">
+                     <div className="h-1.5 flex-1 bg-white/20 rounded-full overflow-hidden backdrop-blur-sm">
+                       <div className="h-full w-[80%] bg-gradient-to-r from-green-400 to-emerald-400 rounded-full shadow-[0_0_12px_rgba(74,222,128,0.5)]"></div>
+                     </div>
+                     <span className="text-xs font-semibold text-green-400 uppercase tracking-widest bg-white/[0.1] px-3 py-1.5 rounded-full border border-white/[0.2] backdrop-blur-xl">APPROVED</span>
                    </div>
-                   <span className="text-[10px] font-bold text-green-400 uppercase tracking-widest">APPROVED</span>
                  </div>
                </div>
             </div>
@@ -426,7 +545,6 @@ function App() {
           </div>
           <div className="flex flex-col md:flex-row justify-between items-center text-[10px] text-gray-600 font-black uppercase tracking-[0.3em] gap-4">
             <p>© {new Date().getFullYear()} SARASWATI SOLAR Power Solution</p>
-            <p>built ❤️ by ayush chaudhary</p>
           </div>
         </div>
       </footer>

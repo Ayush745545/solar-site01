@@ -15,19 +15,22 @@ const BookingForm: React.FC = () => {
   const [submitted, setSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
+  // Sanitize input to prevent injection
+  const sanitize = (str: string) => str.replace(/[<>"'&]/g, '').trim().slice(0, 500);
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Construct WhatsApp message
+    // Sanitize and construct WhatsApp message
     const text = `*New Solar Inquiry (Website Form)*\n\n` +
-      `*Name:* ${formData.name}\n` +
-      `*Mobile:* ${formData.mobile}\n` +
-      `*Email:* ${formData.email}\n` +
-      `*City:* ${formData.city}\n` +
-      `*Monthly Bill:* ₹${formData.monthlyBill}\n` +
-      `*Roof Type:* ${formData.roofType}\n` +
-      (formData.comments ? `*Comments:* ${formData.comments}` : '');
+      `*Name:* ${sanitize(formData.name)}\n` +
+      `*Mobile:* ${sanitize(formData.mobile)}\n` +
+      `*Email:* ${sanitize(formData.email)}\n` +
+      `*City:* ${sanitize(formData.city)}\n` +
+      `*Monthly Bill:* ₹${sanitize(formData.monthlyBill)}\n` +
+      `*Roof Type:* ${sanitize(formData.roofType)}\n` +
+      (formData.comments ? `*Comments:* ${sanitize(formData.comments)}` : '');
       
     const encodedText = encodeURIComponent(text);
     const whatsappUrl = `https://wa.me/919897147441?text=${encodedText}`;

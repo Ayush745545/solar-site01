@@ -50,15 +50,19 @@ const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose }) => {
     setStep((prev) => Math.max(prev - 1, 1));
   };
 
+  // Sanitize input to prevent injection
+  const sanitize = (str: string) => str.replace(/[<>"'&]/g, '').trim().slice(0, 500);
+
   const handleSubmit = async () => {
     setIsSubmitting(true);
+    // Sanitize and construct WhatsApp message
     const text = `*New Solar Booking Request (Popup)*\n\n` +
-      `*Name:* ${formData.name}\n` +
-      `*Mobile:* ${formData.mobile}\n` +
-      (formData.email ? `*Email:* ${formData.email}\n` : '') +
-      `*City:* ${formData.city}\n` +
-      `*Monthly Bill:* ₹${formData.monthlyBill}\n` +
-      `*Roof Type:* ${formData.roofType}`;
+      `*Name:* ${sanitize(formData.name)}\n` +
+      `*Mobile:* ${sanitize(formData.mobile)}\n` +
+      (formData.email ? `*Email:* ${sanitize(formData.email)}\n` : '') +
+      `*City:* ${sanitize(formData.city)}\n` +
+      `*Monthly Bill:* ₹${sanitize(formData.monthlyBill)}\n` +
+      `*Roof Type:* ${sanitize(formData.roofType)}`;
 
     const encodedText = encodeURIComponent(text);
     const whatsappUrl = `https://wa.me/919897147441?text=${encodedText}`;
