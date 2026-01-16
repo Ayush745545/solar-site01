@@ -3,6 +3,7 @@ import { ArrowLeft, Sun, Zap, Shield, Thermometer, Award, ChevronDown } from 'lu
 import Lenis from 'lenis';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { SEO } from './SEO';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -183,8 +184,16 @@ function SolarPanelPage({ onBack }: SolarPanelPageProps) {
     };
   }, [imagesLoaded]);
 
+
+
+
   return (
     <div className="bg-black text-white min-h-screen">
+      <SEO
+        title="Adani Solar Panels | High Efficiency Mono-PERC | Saraswati Solar"
+        description="Discover premium Adani Solar Panels with 21.5% efficiency and 25-year warranty. Best solar panels for home in Saharanpur. MNRE approved."
+        canonical="/products/adani-solar-panels"
+      />
       {/* Loading Screen */}
       {!imagesLoaded && (
         <div className="fixed inset-0 z-50 bg-black flex flex-col items-center justify-center">

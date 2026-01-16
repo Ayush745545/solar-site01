@@ -4,6 +4,7 @@ import SolarCalculator from './components/SolarCalculator';
 import BookingForm from './components/BookingForm';
 import BookingModal from './components/BookingModal';
 import SolarPanelPage from './components/SolarPanelPage';
+import { SEO } from './components/SEO';
 
 function App() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -38,8 +39,44 @@ function App() {
     setIsMobileMenuOpen(false);
   };
 
+  const schemaData = JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Saraswati Solar Power Solution",
+    "image": "https://www.saraswatisolarpower.app/media/Sun%20&%20Fun.png",
+    "@id": "https://www.saraswatisolarpower.app",
+    "url": "https://www.saraswatisolarpower.app",
+    "telephone": "+919897147441",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Regional Center, Talheri Buzurg",
+      "addressLocality": "Saharanpur",
+      "addressRegion": "UP",
+      "postalCode": "247554",
+      "addressCountry": "IN"
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday"
+      ],
+      "opens": "09:00",
+      "closes": "18:00"
+    }
+  });
+
   return (
     <>
+      <SEO
+        title="Saraswati Solar Power Solution | Top Solar Installer in Saharanpur"
+        description="Premium solar power solutions in Saharanpur, UP. Authorized Tata & Adani Solar partners. Get 3kW-10kW rooftop solar systems with subsidy. Call +91 98971 47441."
+        schema={schemaData}
+      />
       {/* Solar Panel Detail Page */}
       {showSolarPanelPage && (
         <SolarPanelPage onBack={() => setShowSolarPanelPage(false)} />
